@@ -16,12 +16,12 @@ Install requirements using a command such as:
 
 ## Usage
   * Environment Variables:
-    * WRF_DATA_DIRECTORY: The path to the directory to find WRF data in. The directory must contain the following structure:
+    * WRF_DATA_DIRECTORY: The path to the directory to find WRF data in. The application will recursively search this directory for NAM or GFS files starting with the current date. If a file newer than 10 days cannot be found, an exception will be raised and the program will fail. The directory must conform to the following structure:
 
 		`<year>/<month>/<day>/WRF<model>_<initialization time>/wrf_d02_hourly.nc` where month and day are two digit, zero-padded numbers.
 	* CROSS_SECTION_ELEVATION_FILE: The absolute path to a csv file containing the elevations of each grid point in the WRF domain. Defaults to the provided file in the `wrf_cross_sections/data` directory.
 
-  * The app can be run from the root of the source folder with the following command.:
+  * The app can be run from the root of the source folder with the following command:
 ```
 WRF_DATA_DIRECTORY=<path to wrf files> ./run
 ```

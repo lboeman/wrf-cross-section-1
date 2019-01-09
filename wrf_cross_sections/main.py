@@ -460,7 +460,7 @@ def find_initial():
     """Looks for file to use as initial data.
     """
     initial_model = None
-    initial_date = parser.parse('2018/12/07')  # hard coded to demo file
+    initial_date = datetime.today()
     initial_time = None
     days_to_try = 10
     while initial_model is None:
